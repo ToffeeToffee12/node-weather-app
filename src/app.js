@@ -18,9 +18,9 @@ app.set('views', path.join(__dirname,'../templates/views'))
 hbs.registerPartials(partials)
 
 
+app.use(express.static(myHtml))
 
-
-
+app.use(express.static(myHtml))
 
 app.get('/help', (req, res)=>{
     res.render('help', {
