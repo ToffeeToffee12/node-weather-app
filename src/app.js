@@ -56,12 +56,13 @@ app.get("/weather", (req, res)=> {
                         return res.send({err})
                     }
                     else {
-                        let {country, weather_descriptions,name, message} = response
+                        let {country, weather_descriptions,name, message, humidity} = response
                         res.send({
                             forecast: weather_descriptions[0],
                             location:country,
                             address: name,
-                            message
+                            message,
+                            humidity
                         })
                     }
                 })

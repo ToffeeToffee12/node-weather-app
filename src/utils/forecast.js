@@ -21,15 +21,17 @@ const forecast = (long, lat, callback) => {
             
             
 
-            const{ location:dataBody, current:dataWeather} = body
+            const{ location:dataBody, current:dataWeather, } = body
+
+            
             
             let {name, country } = dataBody
-            let {temperature, weather_descriptions} = dataWeather   
+            let {temperature, weather_descriptions, feelslike, humidity} = dataWeather   
              
              
              
-             const message = `it is ${weather_descriptions} out ${name} of ${country}. Hitting ${temperature} degrees out!`
-             const dataOBJ = {country ,name , temperature, weather_descriptions, message}
+             const message = `it is ${weather_descriptions} out ${name} of ${country}. Hitting ${temperature} degrees while feeling ${feelslike}  degrees out!`
+             const dataOBJ = {country ,name , temperature, weather_descriptions, message, humidity}
             callback(undefined, dataOBJ)
         }
     })
