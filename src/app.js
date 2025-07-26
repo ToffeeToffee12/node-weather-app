@@ -5,12 +5,12 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 
-const app = express()
+const app = express() 
 
 const myHtml = path.join(__dirname, '../public')
 const partials = path.join(__dirname, '../templates/partials')
 
-
+const port = process.env.PORT || 3000
 
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname,'../templates/views'))
@@ -113,6 +113,6 @@ app.get('/*splat', (req, res) => {
     })
 } )
 
-app.listen(3000, () => {
-    console.log("server is running on port 3000")
+app.listen(port, () => {
+    console.log(`server is running on port ${port}`)
 })
