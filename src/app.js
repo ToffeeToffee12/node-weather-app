@@ -20,7 +20,7 @@ hbs.registerPartials(partials)
 
 
 
-app.use(express.static(myHtml))
+
 
 app.get('/help', (req, res)=>{
     res.render('help', {
