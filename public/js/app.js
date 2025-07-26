@@ -4,12 +4,15 @@ const search = document.querySelector('input')
 const messageOne = document.getElementById('messageOne')
 const messageTwo = document.getElementById('messageTwo')
 
+
+
 weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault()
     messageOne.innerText = ''
     messageTwo.innerText= ''
-    fetch(`http://localhost:3000/weather?address=${encodeURIComponent(search.value)}}`).then((response) => {
-        response.json().then((data)=>{
+    
+    fetch(`/weather?address=${encodeURIComponent(search.value)}}`).then((response) => {
+        response.json().then((data)=>{  
             
             if(!data){
                 console.log('error fetching')
